@@ -5,7 +5,7 @@ A modern React-based Form
 ## UI Screenshots
 
 ###  Page 1 - What is your name
-![Page 1](./screenshot/page1.PNG
+![Page 1](./screenshot/page1.PNG)
 
 ### Page 2 - Number of wheels
 ![Page 2](./screenshot/page2.PNG)
