@@ -32,10 +32,19 @@ Octalogic/
 ├── src/
 │   ├── components
 │   |   ├── BookingForm.js
+        ├── steps
+            ├── Step1UserInfo.js
+│           ├── Step2SelectWheels.js
+│           ├── Step3VehicleType.js
+│           └── Step4Vehicle.js
+            └── Step5BookingDates.js
 │   ├── data
 │   |   ├── EndPoints.js
+    ├── validations
+│   |   ├── bookingValidations.js
 │   ├── App.js
 │   ├── .index.js
+    ├── style.css   
 ├── screenshot/
 │   ├── page1.png
 │   ├── page2.png
