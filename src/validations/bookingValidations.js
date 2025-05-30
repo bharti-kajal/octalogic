@@ -18,7 +18,7 @@ export const step3Validation = Yup.object({
 });
 
 export const step4Validation = Yup.object({
-  vehicle_id: Yup.string().required('Please select a specific model'),
+  vehicle_id: Yup.string().required('Please select a Specific Model'),
 });
 
 export const step5Validation = Yup.object({

@@ -30,7 +30,7 @@ const Step4Vehicle = ({ formik, vehicles, getVehicleTypeNameById, values }) => (
           <strong>Number of Wheel:</strong> {values.no_of_wheel}
         </li>
         <li className="list-group-item">
-          <strong>Type of Vehicle:</strong> {getVehicleTypeNameById(values.vehicle_type_id)}
+          <strong>Type of vehicle:</strong> {getVehicleTypeNameById(values.vehicle_type_id)}
         </li>
       </ul>
     </div>

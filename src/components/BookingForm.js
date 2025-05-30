@@ -27,44 +27,43 @@ const BookingForm = () => {
   const formik = useFormik({
     initialValues,
     validationSchema: bookingSchemas[step - 1],
-    onSubmit: async (values) => {
-      if (step < 5) {
-        const errors = await formik.validateForm();
-        if (Object.keys(errors).length > 0) {
-          toast.error("Please fix the errors before proceeding");
-          return;
-        }
-        setStep(step + 1);
-      } else {
-        try {
-          const response = await EndPoints.add("booking", values);
+  onSubmit: async (values) => {
+  if (step < 5) {
+    const errors = await formik.validateForm();
+    if (Object.keys(errors).length > 0) {
+      toast.error("Please fix the errors before proceeding");
+      return;
+    }
+    setStep(step + 1);
+  } else {
+    try {
+      const response = await EndPoints.add("booking", values);
 
-          toast.success(
-            <div>
-              <h4>Booking Successful!</h4>
-              <p>
-                {values.first_name}, your{" "}
-                {getVehicleNameById(values.vehicle_id)} is booked from{" "}
-                {formatDate(values.start_date)} to {formatDate(values.end_date)}
-              </p>
-            </div>
-          );
+      toast.success(
+        <div>
+          <h4>Booking Successful!</h4>
+          <p>
+            {values.first_name}, your{" "}
+            {getVehicleNameById(values.vehicle_id)} is booked from{" "}
+            {formatDate(values.start_date)} to {formatDate(values.end_date)}
+          </p>
+        </div>
+      );
 
-          formik.resetForm();
-          setStep(1);
-          setVehicleTypes([]);
-          setVehicles([]);
-        } catch (error) {
-          toast.error(
-            <div>
-              <h4>Booking Failed</h4>
-              <p>Please try again or contact support</p>
-            </div>
-          );
-          console.error("Booking error:", error);
-        }
-      }
-    },
+      formik.resetForm();
+      setStep(1);
+      setVehicleTypes([]);
+      setVehicles([]);
+    } catch (error) {
+      toast.error(
+        <div>
+          <h4>Booking Failed</h4>
+          <p>{error.message}</p>
+        </div>
+      );
+    }
+  }
+},
   });
 
   useEffect(() => {
@@ -129,9 +128,9 @@ const BookingForm = () => {
           <span className="date-icon">{step}</span>
           {step === 1 && "What is your name"}
           {step === 2 && "Number of wheels"}
-          {step === 3 && "Type of Vehicle"}
+          {step === 3 && "Type of vehicle"}
           {step === 4 && "Specific Model"}
-          {step === 5 && "Choose Date Range"}
+          {step === 5 && "Date range picker"}
         </h4>
 
         <form onSubmit={formik.handleSubmit}>

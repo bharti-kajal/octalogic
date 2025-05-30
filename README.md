@@ -10,13 +10,13 @@ A modern React-based Form
 ### Page 2 - Number of wheels
 ![Page 2](./screenshot/page2.PNG)
 
-### Page 3 - Type of Vehicle
+### Page 3 - Type of vehicle
 ![Page 3](./screenshot/page3.PNG)
 
 ### Page 4 - Specific Model
 ![Page 4](./screenshot/page4.PNG)
 
-###  Page 5 - Choose Date Range
+###  Page 5 - Date range picker
 ![Page 5](./screenshot/page5.PNG)
 
 ## Tech Stack
